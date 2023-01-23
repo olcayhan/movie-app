@@ -1,0 +1,7 @@
+<ul class="movies" *ngIf="selectedType == 'upcoming'">
+    <li *ngFor="let movie of upComing.results">
+        <a href="/details/{{movie.id}}">
+            <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="">
+        </a>
+    </li>
+</ul>

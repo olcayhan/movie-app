@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MovieTypesComponent } from './movie-types.component';
+import { TopratedComponent } from './toprated.component';
 
-describe('MovieTypesComponent', () => {
-  let component: MovieTypesComponent;
-  let fixture: ComponentFixture<MovieTypesComponent>;
+describe('TopratedComponent', () => {
+  let component: TopratedComponent;
+  let fixture: ComponentFixture<TopratedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MovieTypesComponent ]
+      declarations: [ TopratedComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MovieTypesComponent);
+    fixture = TestBed.createComponent(TopratedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

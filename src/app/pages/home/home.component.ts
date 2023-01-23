@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  selectedType = "nowplaying";
+  
+  setSelected(val: any) {
+    this.selectedType = val;
+  }
+
 
 }

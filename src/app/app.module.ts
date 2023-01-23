@@ -8,9 +8,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { WatchListComponent } from './pages/watch-list/watch-list.component';
 import { TopMoviesComponent } from './components/top-movies/top-movies.component';
-import { MovieTypesComponent } from './components/movie-types/movie-types.component';
 import { DetailsComponent } from './pages/details/details.component';
 import {HttpClientModule } from '@angular/common/http';
+import { NowPlayingComponent } from './components/now-playing/now-playing.component';
+import { UpcomingComponent } from './components/upcoming/upcoming.component';
+import { TopratedComponent } from './components/toprated/toprated.component';
+import { PopularComponent } from './components/popular/popular.component';
 
 
 @NgModule({
@@ -21,8 +24,11 @@ import {HttpClientModule } from '@angular/common/http';
     SearchComponent,
     WatchListComponent,
     TopMoviesComponent,
-    MovieTypesComponent,
     DetailsComponent,
+    NowPlayingComponent,
+    UpcomingComponent,
+    TopratedComponent,
+    PopularComponent,
   ],
     imports: [
         BrowserModule,

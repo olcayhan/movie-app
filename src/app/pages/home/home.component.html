@@ -1,7 +1,37 @@
 <div class="container">
+
     <p class="text-light m-3 fw-bold fs-4 text-center">What do you want to Watch?</p>
     <input type="text" placeholder="Search" class="form-control w-50 m-auto bg-dark text-light" aria-label="Small"
         aria-describedby="inputGroup-sizing-sm">
+
     <app-top-movies></app-top-movies>
-    <app-movie-types></app-movie-types>
+
+    <div class="movie-types">
+        <ul class="types">
+            <li>
+                <button (click)="setSelected('nowplaying')">Now Playing</button>
+                <div *ngIf="selectedType == 'nowplaying'" class="little-icon"></div>
+            </li>
+            <li>
+                <button (click)="setSelected('upcoming')">Upcoming</button>
+                <div *ngIf="selectedType == 'upcoming'" class="little-icon"></div>
+            </li>
+            <li>
+                <button (click)="setSelected('toprated')">Top Rated</button>
+                <div *ngIf="selectedType == 'toprated'" class="little-icon"></div>
+            </li>
+            <li>
+                <button (click)="setSelected('popular')">Popular</button>
+                <div *ngIf="selectedType == 'popular'" class="little-icon"></div>
+            </li>
+        </ul>
+
+        <app-now-playing [selectedType]="selectedType"></app-now-playing>
+
+        <app-upcoming [selectedType]="selectedType"></app-upcoming>
+
+        <app-toprated [selectedType]="selectedType"></app-toprated>
+
+        <app-popular [selectedType]="selectedType"></app-popular>
+    </div>
 </div>
