@@ -1,0 +1,68 @@
+<div class="movie-types">
+
+
+
+
+    <ul class="types">
+        <li>
+            <button (click)="setSelected('nowplaying')">Now Playing</button>
+            <div *ngIf="selectedType == 'nowplaying'" class="little-icon"></div>
+        </li>
+        <li>
+            <button (click)="setSelected('upcoming')">Upcoming</button>
+            <div *ngIf="selectedType == 'upcoming'" class="little-icon"></div>
+        </li>
+        <li>
+            <button (click)="setSelected('toprated')">Top Rated</button>
+            <div *ngIf="selectedType == 'toprated'" class="little-icon"></div>
+        </li>
+        <li>
+            <button (click)="setSelected('popular')">Popular</button>
+            <div *ngIf="selectedType == 'popular'" class="little-icon"></div>
+        </li>
+    </ul>
+
+
+
+
+
+
+    <ul class="movies" *ngIf="selectedType == 'nowplaying'">
+        <li *ngFor="let movie of nowPlaying?.results">
+            <a href="/details/{{movie.id}}">
+                <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="">
+            </a>
+        </li>
+    </ul>
+
+
+    <ul class="movies" *ngIf="selectedType == 'upcoming'">
+        <li *ngFor="let movie of upComing.results">
+            <a href="/details/{{movie.id}}">
+                <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="">
+            </a>
+        </li>
+    </ul>
+
+
+    <ul class="movies" *ngIf="selectedType == 'toprated'">
+        <li *ngFor="let movie of topRated.results">
+            <a href="/details/{{movie.id}}">
+                <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="">
+            </a>
+        </li>
+    </ul>
+
+    <ul class="movies" *ngIf="selectedType == 'popular'">
+        <li *ngFor="let movie of popular.results">
+            <a href="/details/{{movie.id}}">
+                <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="">
+            </a>
+
+        </li>
+    </ul>
+
+
+
+
+</div>

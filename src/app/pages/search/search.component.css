@@ -1,0 +1,46 @@
+.search-movies {
+    color: #fff;
+}
+
+.search-movies ul {
+    list-style: none;
+}
+
+.search-movies ul li {
+    width: 50%;
+    height: 200px;
+    background-color: transparent;
+    border-radius: 20px;
+    margin: 100px auto;
+}
+
+.search-movies ul li div a img {
+    width: 190px;
+    height: 240px;
+    border-radius: 30px;
+}
+
+.search-movies ul li .content {
+    font-size: 16px;
+}
+
+.movieNotFound {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    text-align: center;
+}
+
+.movieNotFound p {
+    margin: 20px;
+    opacity: 0.7;
+}
+
+.movieNotFound i {
+    font-size: 60px;
+    margin: 20px;
+}
+
+
