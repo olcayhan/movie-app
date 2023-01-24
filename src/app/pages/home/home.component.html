@@ -9,16 +9,16 @@
     <div class="movie-types">
         <ul class="types">
             <li>
-                <button (click)="setSelected('nowplaying')">Now Playing</button>
-                <div *ngIf="selectedType == 'nowplaying'" class="little-icon"></div>
+                <button (click)="setSelected('now_playing')">Now Playing</button>
+                <div *ngIf="selectedType == 'now_playing'" class="little-icon"></div>
             </li>
             <li>
                 <button (click)="setSelected('upcoming')">Upcoming</button>
                 <div *ngIf="selectedType == 'upcoming'" class="little-icon"></div>
             </li>
             <li>
-                <button (click)="setSelected('toprated')">Top Rated</button>
-                <div *ngIf="selectedType == 'toprated'" class="little-icon"></div>
+                <button (click)="setSelected('top_rated')">Top Rated</button>
+                <div *ngIf="selectedType == 'top_rated'" class="little-icon"></div>
             </li>
             <li>
                 <button (click)="setSelected('popular')">Popular</button>
@@ -26,12 +26,7 @@
             </li>
         </ul>
 
-        <app-now-playing [selectedType]="selectedType"></app-now-playing>
+        <app-movie-types [selectedType]="selectedType" ></app-movie-types>
 
-        <app-upcoming [selectedType]="selectedType"></app-upcoming>
-
-        <app-toprated [selectedType]="selectedType"></app-toprated>
-
-        <app-popular [selectedType]="selectedType"></app-popular>
     </div>
 </div>

@@ -1,8 +1,0 @@
-<ul class="movies" *ngIf="selectedType == 'popular'">
-    <li *ngFor="let movie of popular.results">
-        <a href="/details/{{movie.id}}">
-            <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="">
-        </a>
-
-    </li>
-</ul>

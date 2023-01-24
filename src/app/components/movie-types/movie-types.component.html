@@ -1,5 +1,5 @@
-<ul class="movies" *ngIf="selectedType == 'toprated'">
-    <li *ngFor="let movie of topRated.results">
+<ul class="movies" *ngIf="movieType !== null">
+    <li *ngFor="let movie of movieType?.results">
         <a href="/details/{{movie.id}}">
             <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="">
         </a>
