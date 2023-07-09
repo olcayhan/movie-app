@@ -1,0 +1,23 @@
+div div h3 {
+  font-weight: 600;
+  font-size: 24px;
+  color: #ebebef;
+}
+div div p {
+  font-weight: 500;
+  font-size: 18px;
+  color: #92929d;
+}
+
+@media screen and (max-width: 768px) {
+  div div h3 {
+    font-weight: 600;
+    font-size: 16px;
+    color: #ebebef;
+  }
+  div div p {
+    font-weight: 500;
+    font-size: 12px;
+    color: #92929d;
+  }
+}

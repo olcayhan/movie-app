@@ -11,6 +11,7 @@ import { TopMoviesComponent } from './components/top-movies/top-movies.component
 import { DetailsComponent } from './pages/details/details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieTypesComponent } from './components/movie-types/movie-types.component';
+import { LoadingBarComponent } from './components/loading-bar/loading-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MovieTypesComponent } from './components/movie-types/movie-types.compon
     TopMoviesComponent,
     DetailsComponent,
     MovieTypesComponent,
+    LoadingBarComponent,
   ],
   imports: [BrowserModule, RouterOutlet, AppRoutingModule, HttpClientModule],
   providers: [],

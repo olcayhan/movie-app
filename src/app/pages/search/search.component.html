@@ -1,14 +1,14 @@
 <div class="container">
   <h2 class="text-light text-center m-3">Search</h2>
   <div class="search">
-    <input type="text" placeholder="Search" />
+    <input type="text" placeholder="Search" (change)="searchFilter($event)" />
     <img src="../../../assets/search.svg" />
   </div>
 
-  <div class="search-movies" *ngIf="searchMovies != null">
-    <ul>
-      <li *ngFor="let movie of searchMovies" class="row">
-        <div class="col">
+  <div class="search-movies" *ngIf="searchMovies !== undefined">
+    <div>
+      <div *ngFor="let movie of searchMovies" class="search-movies__main">
+        <div class="w-100 d-flex justify-content-end">
           <a href="/details/{{ movie.id }}">
             <img
               src="https://image.tmdb.org/t/p/original{{ movie.poster_path }}"
@@ -16,7 +16,7 @@
           </a>
         </div>
 
-        <div class="content col">
+        <div class="w-100">
           <h5>{{ movie.title }}</h5>
           <div class="m-2 mt-5">
             <i class="fas fa-star"></i>
@@ -27,8 +27,8 @@
             <span class="ms-2">{{ movie.release_date.slice(0, 4) }}</span>
           </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
 
     <div class="movieNotFound" *ngIf="searchMovies.length == 0">
       <i class="fa-solid fa-magnifying-glass"></i>

@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
   constructor(private myDataService: SearchService) {}
 
-  searchMovies: any;
-  query: any;
+  searchMovies: any | undefined = undefined;
+  query: string = '';
 
   searchFilter(e: any) {
     this.query = e.target.value;
@@ -22,6 +22,4 @@ export class SearchComponent implements OnInit {
         this.searchMovies = data.results;
       });
   }
-
-  ngOnInit(): void {}
 }

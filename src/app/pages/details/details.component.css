@@ -1,5 +1,10 @@
 .details {
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .details p {
@@ -30,9 +35,11 @@
 }
 
 .details .about-movies {
-  width: 50%;
-  height: 200px;
-  margin: 50px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
 }
 
 .details .review-movies {
@@ -62,23 +69,29 @@
 }
 
 .details .cast-movies {
-  width: 50%;
+  /* width: 50%;
   height: 200px;
-  margin: 50px auto;
-}
+  margin: 50px auto; */
 
-.details .cast-movies ul {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  grid-template-columns: auto auto auto;
+  align-items: center;
   list-style: none;
+  gap: 30px;
 }
 
-.details .cast-movies ul li {
-  margin: 20px;
+.details .cast-movies > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 30px;
 }
 
-.details .cast-movies ul li .image-actor {
+.details .cast-movies div div .image-actor {
   width: 150px;
   height: 150px;
   margin: 30px;
