@@ -1,14 +1,16 @@
 .movies {
-    list-style: none;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: auto auto auto auto;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .movies li img {
-    width: 150px;
-    height: 200px;
-    margin: 30px;
-    border-radius: 20px;
-    text-align: center;
+  width: 250px;
+  height: 450px;
+  margin: 30px;
+  border-radius: 20px;
+  text-align: center;
 }

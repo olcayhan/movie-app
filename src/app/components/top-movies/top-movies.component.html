@@ -1,14 +1,27 @@
-<button class="backBtn" [disabled]="x>=0 ? true : false" (click)="backImg()"><i class="fas fa-angle-left"></i></button>
-
-<ul class="top-movies">
-    <li *ngFor="let movie of popular  let i = index" [style.transform]="'translateX(' + x + 'px)'">
-        <a href="/details/{{movie.id}}">
-            <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}">
-        </a>
-        <p class="number">{{i+1}}</p>
-    </li>
-
-</ul>
-
-<button class="nextBtn" [disabled]="x<=-1200 ? true : false" (click)="nextImg()"><i
-        class="fas fa-angle-right"></i></button>
+<div class="top-movies">
+  <button
+    class="backBtn"
+    [disabled]="x >= 0 ? true : false"
+    (click)="backImg()"
+  >
+    <i class="fas fa-angle-left"></i>
+  </button>
+  <div class="top-movies__main">
+    <div
+      *ngFor="let movie of popular; let i = index"
+      [style.transform]="'translateX(' + x + 'px)'"
+    >
+      <a href="/details/{{ movie.id }}">
+        <img src="https://image.tmdb.org/t/p/original{{ movie.poster_path }}" />
+      </a>
+      <p class="number">{{ i + 1 }}</p>
+    </div>
+  </div>
+  <button
+    class="nextBtn"
+    [disabled]="x <= -600 ? true : false"
+    (click)="nextImg()"
+  >
+    <i class="fas fa-angle-right"></i>
+  </button>
+</div>

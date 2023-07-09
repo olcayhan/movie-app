@@ -1,45 +1,39 @@
 <div class="container">
-    <h2 class="text-light text-center m-3">Search</h2>
-    <input type="text" placeholder="Search" class="form-control w-50 m-auto bg-dark text-light" [value]=""
-        aria-label="Small" aria-describedby="inputGroup-sizing-sm" (change)="searchFilter($event)">
+  <h2 class="text-light text-center m-3">Search</h2>
+  <div class="search">
+    <input type="text" placeholder="Search" />
+    <img src="../../../assets/search.svg" />
+  </div>
 
-    <div class="search-movies" *ngIf="searchMovies != null">
-        <ul>
-            <li *ngFor="let movie of searchMovies" class="row">
-                <div class="col">
-                    <a href="/details/{{movie.id}}">
-                        <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}">
-                    </a>
-                </div>
-
-                <div class="content col">
-                    <h5>{{movie.title}}</h5>
-                    <div class="m-2 mt-5">
-                        <i class="fas fa-star"></i>
-                        <span class="ms-2">{{movie.vote_average}}</span>
-                    </div>
-                    <div class="m-2">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <span class="ms-2">{{movie.release_date.slice(0,4)}}</span>
-                    </div>
-                </div>
-
-
-            </li>
-        </ul>
-
-
-        <div class="movieNotFound" *ngIf="searchMovies.length == 0">
-
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <h4>We are sorry, we can not find the movie :(</h4>
-            <p>Find your movie by Type title, categories, years, etc </p>
-
+  <div class="search-movies" *ngIf="searchMovies != null">
+    <ul>
+      <li *ngFor="let movie of searchMovies" class="row">
+        <div class="col">
+          <a href="/details/{{ movie.id }}">
+            <img
+              src="https://image.tmdb.org/t/p/original{{ movie.poster_path }}"
+            />
+          </a>
         </div>
 
+        <div class="content col">
+          <h5>{{ movie.title }}</h5>
+          <div class="m-2 mt-5">
+            <i class="fas fa-star"></i>
+            <span class="ms-2">{{ movie.vote_average }}</span>
+          </div>
+          <div class="m-2">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span class="ms-2">{{ movie.release_date.slice(0, 4) }}</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="movieNotFound" *ngIf="searchMovies.length == 0">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <h4>We are sorry, we can not find the movie :(</h4>
+      <p>Find your movie by Type title, categories, years, etc</p>
     </div>
-
-
-
-
+  </div>
 </div>

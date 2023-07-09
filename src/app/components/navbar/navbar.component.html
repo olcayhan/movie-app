@@ -1,23 +1,37 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary  navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand ms-5" href="/">Movie App</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/search">Search</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="/watchlist">Watch List</a>
-                </li>
+<nav class="d-none d-md-flex justify-content-between text-light p-4 bg-dark">
+  <div class="navbar-brand">Movie App</div>
+  <div class="d-flex gap-4">
+    <a routerLink="/" class="text-light text-decoration-none">Home</a>
+    <a routerLink="/search" class="text-light text-decoration-none">Search</a>
+    <a routerLink="/watchlist" class="text-light text-decoration-none"
+      >Watchlist</a
+    >
+    <!-- Add more navigation links here -->
+  </div>
+</nav>
 
-            </ul>
-        </div>
-    </div>
+<nav
+  class="d-flex flex-row justify-content-between align-items-center d-md-none fixed-bottom w-100 py-2 px-5 gap-4"
+>
+  <a
+    routerLink="/"
+    class="d-flex flex-column justify-content-center align-items-center text-decoration-none gap-2"
+  >
+    <img src="../../../assets/home.svg" />
+    <p>Home</p>
+  </a>
+  <a
+    routerLink="/search"
+    class="d-flex flex-column justify-content-center align-items-center text-decoration-none gap-2"
+  >
+    <img src="../../../assets/search.svg" />
+    <p>Search</p></a
+  >
+  <a
+    routerLink="/watchlist"
+    class="d-flex flex-column justify-content-center align-items-center text-decoration-none gap-2"
+  >
+    <img src="../../../assets/save.svg" />
+    <p>Watchlist</p>
+  </a>
 </nav>

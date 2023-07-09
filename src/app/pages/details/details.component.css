@@ -1,103 +1,107 @@
 .details {
-    color: #fff;
+  color: #fff;
 }
 
 .details p {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .background-img {
-    width: 100%;
-    height: 500px;
-    margin: 0 auto;
-    border-radius: 0 0 30px 30px;
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: 0 0 30px 30px;
 }
 
 .details .top-buttons {
-    list-style: none;
-    display: flex;
-    justify-content: center;
+  list-style: none;
+  display: flex;
+  justify-content: center;
 }
 
 .details .top-buttons li {
-    margin: 0 30px;
-
+  margin: 0 30px;
 }
 
 .details .top-buttons li button {
-    background-color: transparent;
-    color: #fff;
-    border: none;
+  background-color: transparent;
+  color: #fff;
+  border: none;
 }
 
 .details .about-movies {
-    width: 50%;
-    height: 200px;
-    margin: 50px auto;
+  width: 50%;
+  height: 200px;
+  margin: 50px auto;
 }
 
 .details .review-movies {
-    width: 50%;
-    height: 200px;
-    margin: 50px auto;
+  width: 50%;
+  height: 200px;
+  margin: 50px auto;
 }
 
 .details .review-movies ul {
-    list-style: none;
+  list-style: none;
 }
 
 .details .review-movies ul li {
-    margin: 20px;
+  margin: 20px;
 }
 
 .details .review-movies ul li .avatar {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .details .review-movies ul li .avatar .left-avatar .user-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin: 0 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 30px;
 }
 
-
 .details .cast-movies {
-    width: 50%;
-    height: 200px;
-    margin: 50px auto;
+  width: 50%;
+  height: 200px;
+  margin: 50px auto;
 }
 
 .details .cast-movies ul {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: auto auto auto;
-    list-style: none;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto auto;
+  list-style: none;
 }
 
 .details .cast-movies ul li {
-    margin: 20px;
+  margin: 20px;
 }
 
 .details .cast-movies ul li .image-actor {
-    width: 150px;
-    height: 150px;
-    margin: 30px;
-    border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 30px;
+  border-radius: 50%;
 }
 
-.poster {
-    position: absolute;
-    width: 200px;
-    height: 300px;
-    top: 60%;
-    left: 10%;
-    border-radius: 30px;
+.details__head {
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+.details__head .poster {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  bottom: 0;
+  left: 10%;
+  border-radius: 30px;
 }
 
 .little-icon {
-    width: 100%;
-    height: 4px;
-    background-color: #3A3F47;
+  width: 100%;
+  height: 4px;
+  background-color: #3a3f47;
 }

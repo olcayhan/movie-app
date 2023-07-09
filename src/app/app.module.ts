@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { RouterOutlet } from "@angular/router";
+import { RouterOutlet } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -12,7 +12,6 @@ import { DetailsComponent } from './pages/details/details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieTypesComponent } from './components/movie-types/movie-types.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,16 +21,10 @@ import { MovieTypesComponent } from './components/movie-types/movie-types.compon
     WatchListComponent,
     TopMoviesComponent,
     DetailsComponent,
-
     MovieTypesComponent,
   ],
-  imports: [
-    BrowserModule,
-    RouterOutlet,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, RouterOutlet, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

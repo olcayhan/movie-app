@@ -1,65 +1,79 @@
 <div class="details" *ngIf="details != null">
+  <h2 class="text-center m-2">Details</h2>
+  <div class="details__head">
+    <img
+      class="background-img"
+      src="https://image.tmdb.org/t/p/original{{ details.backdrop_path }}"
+    />
 
-    <h2 class="text-center m-2">Details</h2>
-    <img class="background-img" src="https://image.tmdb.org/t/p/original{{details.backdrop_path}}" />
+    <img
+      class="poster"
+      src="https://image.tmdb.org/t/p/original{{ details.poster_path }}"
+    />
+  </div>
+  <h3 class="text-center m-2">{{ details.title }}</h3>
+  <p class="text-center m-4">
+    {{ details.release_date.slice(0, 4) }} | {{ details.runtime }} minutes |
+    {{ details.genres[0].name }}
+  </p>
 
-    <img class="poster" src="https://image.tmdb.org/t/p/original{{details.poster_path}}" />
-    <h3 class="text-center m-2">{{details.title}}</h3>
-    <p class="text-center m-4"> {{details.release_date.slice(0,4)}} | {{details.runtime}} minutes |
-        {{details.genres[0].name}}</p>
+  <ul class="top-buttons">
+    <li>
+      <button (click)="selectedNav('about')">About Movie</button>
 
+      <div *ngIf="selectNav == 'about'" class="little-icon mt-2"></div>
+    </li>
+    <li>
+      <button (click)="selectedNav('review')">Reviews</button>
+      <div *ngIf="selectNav == 'review'" class="little-icon mt-2"></div>
+    </li>
+    <li>
+      <button (click)="selectedNav('cast')">Cast</button>
+      <div *ngIf="selectNav == 'cast'" class="little-icon mt-2"></div>
+    </li>
+  </ul>
 
-    <ul class="top-buttons">
-        <li>
-            <button (click)="selectedNav('about')">About Movie</button>
+  <div class="about-movies" *ngIf="selectNav == 'about'">
+    <p>
+      {{ details.overview }}
+    </p>
+  </div>
 
-            <div *ngIf="selectNav == 'about'" class="little-icon  mt-2"></div>
-        </li>
-        <li>
-            <button (click)="selectedNav('review')">Reviews</button>
-            <div *ngIf="selectNav == 'review'" class="little-icon  mt-2"></div>
-
-        </li>
-        <li>
-            <button (click)="selectedNav('cast')">Cast</button>
-            <div *ngIf="selectNav == 'cast'" class="little-icon mt-2"></div>
-
-        </li>
+  <div class="review-movies" *ngIf="selectNav == 'review'">
+    <ul>
+      <li *ngFor="let review of reviews">
+        <div class="avatar">
+          <div class="left-avatar">
+            <img
+              class="user-image"
+              src="https://image.tmdb.org/t/p/original{{
+                review.author_details.avatar_path
+              }}"
+            />
+            <p class="user-poing text-center mt-3 text-primary">
+              {{ review.author_details.rating }}
+            </p>
+          </div>
+          <div class="about">
+            <h5>{{ review.author }}</h5>
+            <p>
+              {{ review.content }}
+            </p>
+          </div>
+        </div>
+      </li>
     </ul>
+  </div>
 
-    <div class="about-movies" *ngIf="selectNav == 'about'">
-        <p>
-            {{details.overview}}
-        </p>
-    </div>
-
-    <div class="review-movies" *ngIf="selectNav == 'review'">
-        <ul>
-            <li *ngFor="let review of reviews">
-                <div class="avatar">
-                    <div class="left-avatar">
-                        <img class="user-image"
-                            src="https://image.tmdb.org/t/p/original{{review.author_details.avatar_path}}" />
-                        <p class="user-poing text-center mt-3 text-primary">{{review.author_details.rating}}</p>
-                    </div>
-                    <div class="about">
-                        <h5>{{review.author}}</h5>
-                        <p>
-                            {{review.content}}
-                        </p>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="cast-movies" *ngIf="selectNav == 'cast'">
-        <ul>
-            <li *ngFor="let cast of credits">
-                <img class="image-actor" src="https://image.tmdb.org/t/p/original{{cast.profile_path}}">
-                <h5 class="text-center">{{cast.original_name}}</h5>
-            </li>
-        </ul>
-    </div>
-
+  <div class="cast-movies" *ngIf="selectNav == 'cast'">
+    <ul>
+      <li *ngFor="let cast of credits">
+        <img
+          class="image-actor"
+          src="https://image.tmdb.org/t/p/original{{ cast.profile_path }}"
+        />
+        <h5 class="text-center">{{ cast.original_name }}</h5>
+      </li>
+    </ul>
+  </div>
 </div>
