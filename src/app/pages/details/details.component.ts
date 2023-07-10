@@ -17,7 +17,11 @@ export class DetailsComponent implements OnInit {
   details: any;
   reviews: any;
   credits: any;
-  movieId: any;
+  movieId: string = '';
+
+  local: string | null = localStorage.getItem('watchlist');
+  watchlist: string[] = this.local ? JSON.parse(this.local) : [];
+
   selectNav = 'about';
 
   ngOnInit(): void {
@@ -48,7 +52,17 @@ export class DetailsComponent implements OnInit {
       });
   }
 
-  selectedNav(val: string) {
+  saveWatchlist(): void {
+    if (this.watchlist.includes(this.movieId)) {
+      this.watchlist = this.watchlist.filter((item) => item !== this.movieId);
+    } else {
+      this.watchlist.push(this.movieId);
+    }
+    console.log(this.watchlist);
+    localStorage.setItem('watchlist', JSON.stringify(this.watchlist));
+  }
+
+  selectedNav(val: string): void {
     this.selectNav = val;
   }
 }

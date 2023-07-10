@@ -1,9 +1,40 @@
 <div
   class="d-flex flex-column justify-content-center align-items-center w-100 h-100"
 >
-  <div class="d-flex flex-column justify-content-center align-items-center">
+  <div
+    *ngIf="movies.length === 0; else watchlist"
+    class="d-flex flex-column justify-content-center align-items-center"
+  >
     <img src="../../../assets/magic-box.svg" alt="magic-box" />
     <h3>There is no movie yet!</h3>
     <p>Find your movie by Type title, categories, years, etc</p>
   </div>
+
+  <ng-template #watchlist>
+    <div class="search">
+      <h1>Watchlist</h1>
+
+      <div *ngFor="let movie of movies" class="search-movies__main">
+        <div class="w-100 d-flex justify-content-end">
+          <a href="/details/{{ movie.id }}">
+            <img
+              src="https://image.tmdb.org/t/p/original{{ movie.poster_path }}"
+            />
+          </a>
+        </div>
+
+        <div class="w-100">
+          <h5>{{ movie.title }}</h5>
+          <div class="m-2 mt-5">
+            <i class="fas fa-star"></i>
+            <span class="ms-2">{{ movie.vote_average }}</span>
+          </div>
+          <div class="m-2">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span class="ms-2">{{ movie.release_date.slice(0, 4) }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </div>
