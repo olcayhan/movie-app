@@ -14,3 +14,13 @@
   border-radius: 20px;
   text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+  .movies li img {
+    width: 140px;
+    height: 220px;
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+  }
+}
