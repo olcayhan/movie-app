@@ -2,6 +2,9 @@ import { take } from 'rxjs';
 import { DetailsService } from './details.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Review } from 'src/app/types/review';
+import { Credits } from 'src/app/types/credits';
+import { Details } from 'src/app/types/details';
 
 @Component({
   selector: 'app-details',
@@ -9,15 +12,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent implements OnInit {
+  details!: Details;
+  reviews: Review[] = [];
+  credits: Credits[] = [];
+  movieId: string = '';
+
   constructor(
     private route: ActivatedRoute,
     private myDataService: DetailsService
   ) {}
-
-  details: any;
-  reviews: any;
-  credits: any;
-  movieId: string = '';
 
   local: string | null = localStorage.getItem('watchlist');
   watchlist: string[] = this.local ? JSON.parse(this.local) : [];
@@ -32,7 +35,7 @@ export class DetailsComponent implements OnInit {
     this.myDataService
       .getDetails(this.movieId)
       .pipe(take(1))
-      .subscribe((data) => {
+      .subscribe((data: any) => {
         this.details = data;
       });
 
@@ -41,7 +44,6 @@ export class DetailsComponent implements OnInit {
       .pipe(take(1))
       .subscribe((data: any) => {
         this.reviews = data.results;
-        console.log(this.reviews);
       });
 
     this.myDataService

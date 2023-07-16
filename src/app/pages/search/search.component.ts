@@ -1,6 +1,7 @@
 import { take } from 'rxjs';
 import { SearchService } from './search.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Search } from 'src/app/types/search';
 
 @Component({
   selector: 'app-search',
@@ -8,10 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css'],
 })
 export class SearchComponent {
-  constructor(private myDataService: SearchService) {}
-
-  searchMovies: any | undefined = undefined;
+  searchMovies!: Search[];
   query: string = '';
+  constructor(private myDataService: SearchService) {}
 
   searchFilter(e: any) {
     this.query = e.target.value;

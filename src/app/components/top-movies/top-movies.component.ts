@@ -1,3 +1,4 @@
+import { Details } from 'src/app/types/details';
 import { TopMoviesService } from './top-movies.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,16 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-movies.component.css'],
 })
 export class TopMoviesComponent implements OnInit {
-  popular: any;
+  popular!: Details[];
   x = 0;
 
   constructor(private myDataService: TopMoviesService) {}
 
   nextImg() {
-    this.x -= 200;
+    this.x -= 100;
   }
   backImg() {
-    this.x += 200;
+    this.x += 100;
   }
 
   ngOnInit(): void {

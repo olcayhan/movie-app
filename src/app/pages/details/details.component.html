@@ -28,7 +28,7 @@
   </div>
   <h3 class="text-center m-2">{{ details.title }}</h3>
   <p class="text-center m-4">
-    {{ details.release_date.slice(0, 4) }} | {{ details.runtime }} minutes |
+    {{ details.release_date?.slice(0, 4) }} | {{ details.runtime }} minutes |
     {{ details.genres[0].name }}
   </p>
 

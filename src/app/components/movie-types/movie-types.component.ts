@@ -1,20 +1,22 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { MovieTypesService } from "./movie-types.service"
+import { MovieTypesService } from './movie-types.service';
+import { Details } from 'src/app/types/details';
 
 @Component({
   selector: 'app-movie-types',
   templateUrl: './movie-types.component.html',
-  styleUrls: ['./movie-types.component.css']
+  styleUrls: ['./movie-types.component.css'],
 })
-export class MovieTypesComponent implements OnChanges{
-  movieType: any;
+export class MovieTypesComponent implements OnChanges {
+  movieType!: Details[];
   @Input() selectedType: any;
 
-  constructor(private myDataService: MovieTypesService) { }
+  constructor(private myDataService: MovieTypesService) {}
 
   ngOnChanges(): void {
-    this.myDataService.getData(this.selectedType).subscribe((data) => {
-      this.movieType = data;
-    })
+    this.myDataService.getData(this.selectedType).subscribe((data: any) => {
+      this.movieType = data.results;
+      console.log(this.movieType);
+    });
   }
 }

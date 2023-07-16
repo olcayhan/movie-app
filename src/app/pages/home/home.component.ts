@@ -1,4 +1,4 @@
-import { Component, } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +6,9 @@ import { Component, } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  selectedType = "now_playing";
-  
-  setSelected(val: any) {
+  selectedType = 'now_playing';
+
+  setSelected(val: string) {
     this.selectedType = val;
   }
-  
 }

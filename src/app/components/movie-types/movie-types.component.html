@@ -1,7 +1,10 @@
 <ul class="movies" *ngIf="movieType !== null">
-    <li *ngFor="let movie of movieType?.results">
-        <a href="/details/{{movie.id}}">
-            <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="">
-        </a>
-    </li>
+  <li *ngFor="let movie of movieType">
+    <a href="/details/{{ movie.id }}">
+      <img
+        src="https://image.tmdb.org/t/p/original{{ movie.poster_path }}"
+        [alt]="movie.id"
+      />
+    </a>
+  </li>
 </ul>

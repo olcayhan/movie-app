@@ -9,7 +9,7 @@
   <div class="top-movies__main">
     <div
       *ngFor="let movie of popular; let i = index"
-      [style.transform]="'translateX(' + x + 'px)'"
+      [style.transform]="'translateX(' + x + '%)'"
     >
       <a href="/details/{{ movie.id }}">
         <img src="https://image.tmdb.org/t/p/original{{ movie.poster_path }}" />
@@ -19,7 +19,7 @@
   </div>
   <button
     class="nextBtn"
-    [disabled]="x <= -600 ? true : false"
+    [disabled]="x <= -400 ? true : false"
     (click)="nextImg()"
   >
     <i class="fas fa-angle-right"></i>

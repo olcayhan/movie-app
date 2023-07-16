@@ -3,7 +3,8 @@
 >
   <div
     *ngIf="movies.length === 0; else watchlist"
-    class="d-flex flex-column justify-content-center align-items-center"
+    class="d-flex flex-column justify-content-center align-items-center w-100"
+    style="height: 100vh"
   >
     <img src="../../../assets/magic-box.svg" alt="magic-box" />
     <h3>There is no movie yet!</h3>
@@ -31,7 +32,7 @@
           </div>
           <div class="m-2">
             <i class="fa-solid fa-calendar-days"></i>
-            <span class="ms-2">{{ movie.release_date.slice(0, 4) }}</span>
+            <span class="ms-2">{{ movie.release_date?.slice(0, 4) }}</span>
           </div>
         </div>
       </div>
