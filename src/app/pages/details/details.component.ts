@@ -31,7 +31,10 @@ export class DetailsComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.movieId = params['movieId'];
     });
+    this.fetchData();
+  }
 
+  fetchData(): void {
     this.myDataService
       .getDetails(this.movieId)
       .pipe(take(1))
@@ -60,7 +63,6 @@ export class DetailsComponent implements OnInit {
     } else {
       this.watchlist.push(this.movieId);
     }
-    console.log(this.watchlist);
     localStorage.setItem('watchlist', JSON.stringify(this.watchlist));
   }
 

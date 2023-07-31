@@ -2,27 +2,15 @@
   <p class="text-light m-3 fw-bold fs-4">What do you want to Watch?</p>
   <div class="search">
     <input type="text" placeholder="Search" />
-    <img src="../../../assets/search.svg" />
+    <img src="../../../assets/search.svg" alt="search-icon" />
   </div>
   <app-top-movies></app-top-movies>
 
   <div class="movie-types">
     <div class="types">
-      <div>
-        <button (click)="setSelected('now_playing')">Now Playing</button>
-        <div *ngIf="selectedType == 'now_playing'" class="little-icon"></div>
-      </div>
-      <div>
-        <button (click)="setSelected('upcoming')">Upcoming</button>
-        <div *ngIf="selectedType == 'upcoming'" class="little-icon"></div>
-      </div>
-      <div>
-        <button (click)="setSelected('top_rated')">Top Rated</button>
-        <div *ngIf="selectedType == 'top_rated'" class="little-icon"></div>
-      </div>
-      <div>
-        <button (click)="setSelected('popular')">Popular</button>
-        <div *ngIf="selectedType == 'popular'" class="little-icon"></div>
+      <div *ngFor="let movie of movieTypes">
+        <button (click)="setSelected(movie.href)">{{ movie.name }}</button>
+        <div *ngIf="selectedType == movie.href" class="little-icon"></div>
       </div>
     </div>
 

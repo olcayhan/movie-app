@@ -14,9 +14,8 @@ export class MovieTypesComponent implements OnChanges {
   constructor(private myDataService: MovieTypesService) {}
 
   ngOnChanges(): void {
-    this.myDataService.getData(this.selectedType).subscribe((data: any) => {
-      this.movieType = data.results;
-      console.log(this.movieType);
-    });
+    this.myDataService
+      .getMovieTypes(this.selectedType)
+      .subscribe((data: any) => (this.movieType = data.results));
   }
 }

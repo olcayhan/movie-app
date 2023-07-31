@@ -1,48 +1,13 @@
 <nav>
   <a
-    href="/"
     class="d-flex flex-column justify-content-center align-items-center text-decoration-none gap-2"
-    [ngStyle]="currentUrl === '/' ? { color: '#0296e5' } : { color: '#67686d' }"
-  >
-    <img
-      [src]="
-        currentUrl === '/'
-          ? '../../../assets/home-active.svg'
-          : '../../../assets/home.svg'
-      "
-    />
-    <p>Home</p>
-  </a>
-  <a
-    href="/search"
-    class="d-flex flex-column justify-content-center align-items-center text-decoration-none gap-2"
+    *ngFor="let item of navbarItems"
+    [href]="item.path"
     [ngStyle]="
-      currentUrl === '/search' ? { color: '#0296e5' } : { color: '#67686d' }
+      currentUrl === item.path ? { color: '#0296e5' } : { color: '#67686d' }
     "
   >
-    <img
-      [src]="
-        currentUrl === '/search'
-          ? '../../../assets/search-active.svg'
-          : '../../../assets/search.svg'
-      "
-    />
-    <p>Search</p></a
-  >
-  <a
-    [ngStyle]="
-      currentUrl === '/watchlist' ? { color: '#0296e5' } : { color: '#67686d' }
-    "
-    href="/watchlist"
-    class="d-flex flex-column justify-content-center align-items-center text-decoration-none gap-2"
-  >
-    <img
-      [src]="
-        currentUrl === '/watchlist'
-          ? '../../../assets/save-active.svg'
-          : '../../../assets/save.svg'
-      "
-    />
-    <p>Watchlist</p>
+    <img [src]="currentUrl === item.path ? item.icon : item.activeIcon" />
+    <p>{{ item.name }}</p>
   </a>
 </nav>
