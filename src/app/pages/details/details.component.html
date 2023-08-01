@@ -5,12 +5,12 @@
   <div
     class="d-flex flex-row justify-content-between align-items-center w-100 p-3"
   >
-    <a class="border-0 bg-transparent" href="/search">
-      <img src="../../../assets/arrow-left.svg" alt="arrow-left" />
+    <a class="border-0 bg-transparent" href="/">
+      <img src="../../../assets/icons/arrow-left.svg" alt="arrow-left" />
     </a>
     <h2 class="text-center m-2">Detail</h2>
     <button class="bg-transparent border-0" (click)="saveWatchlist()">
-      <img src="../../../assets/save-head.svg" alt="save-head" />
+      <img src="../../../assets/icons/save-head.svg" alt="save-head" />
     </button>
   </div>
   <div class="details__head">
@@ -59,7 +59,7 @@
       <li *ngFor="let review of reviews">
         <div class="avatar">
           <div class="left-avatar">
-            <img class="user-image" src="../../../assets/avatar.svg" />
+            <img class="user-image" src="../../../assets/images/avatar.svg" />
             <p class="user-poing text-center mt-3 text-primary">
               {{ review.author_details.rating }}
             </p>
@@ -83,7 +83,7 @@
           [src]="
             cast.profile_path
               ? 'https://image.tmdb.org/t/p/original' + cast.profile_path
-              : '../../../assets/avatar.svg'
+              : '../../../assets/images/avatar.svg'
           "
         />
         <h5 class="text-center">{{ cast.original_name }}</h5>

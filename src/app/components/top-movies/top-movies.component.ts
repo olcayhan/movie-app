@@ -1,4 +1,4 @@
-import { Details } from 'src/app/types/details';
+import { Details } from 'src/app/models/details';
 import { TopMoviesService } from './top-movies.service';
 import { Component, OnInit } from '@angular/core';
 

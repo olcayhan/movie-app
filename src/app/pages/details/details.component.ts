@@ -2,9 +2,9 @@ import { take } from 'rxjs';
 import { DetailsService } from './details.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Review } from 'src/app/types/review';
-import { Credits } from 'src/app/types/credits';
-import { Details } from 'src/app/types/details';
+import { Review } from 'src/app/models/review';
+import { Credits } from 'src/app/models/credits';
+import { Details } from 'src/app/models/details';
 
 @Component({
   selector: 'app-details',

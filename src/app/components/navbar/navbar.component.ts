@@ -17,20 +17,20 @@ export class NavbarComponent {
   navbarItems: NavbarItem[] = [
     {
       path: '/',
-      icon: '../../../assets/home-active.svg',
-      activeIcon: '../../../assets/home.svg',
+      icon: '../../../assets/icons/home-active.svg',
+      activeIcon: '../../../assets/icons/home.svg',
       name: 'Home',
     },
     {
       path: '/search',
-      icon: '../../../assets/search-active.svg',
-      activeIcon: '../../../assets/search.svg',
+      icon: '../../../assets/icons/search-active.svg',
+      activeIcon: '../../../assets/icons/search.svg',
       name: 'Search',
     },
     {
       path: '/watchlist',
-      icon: '../../../assets/save-active.svg',
-      activeIcon: '../../../assets/save.svg',
+      icon: '../../../assets/icons/save-active.svg',
+      activeIcon: '../../../assets/icons/save.svg',
       name: 'Watchlist',
     },
   ];

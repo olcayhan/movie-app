@@ -1,7 +1,7 @@
 import { take } from 'rxjs';
 import { SearchService } from './search.service';
 import { Component } from '@angular/core';
-import { Search } from 'src/app/types/search';
+import { Search } from 'src/app/models/search';
 
 @Component({
   selector: 'app-search',

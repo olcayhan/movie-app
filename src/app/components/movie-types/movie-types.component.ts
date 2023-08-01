@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { MovieTypesService } from './movie-types.service';
-import { Details } from 'src/app/types/details';
+import { Details } from 'src/app/models/details';
 
 @Component({
   selector: 'app-movie-types',

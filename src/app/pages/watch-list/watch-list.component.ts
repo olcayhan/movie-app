@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Details } from 'src/app/types/details';
+import { Details } from 'src/app/models/details';
 
 @Component({
   selector: 'app-watch-list',
