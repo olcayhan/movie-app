@@ -1,0 +1,25 @@
+@import "../../vars.scss";
+
+.movies {
+  @include display(flex, row, center, center);
+  list-style: none;
+  flex-wrap: wrap;
+
+  & > li img {
+    @include size(250px, 450px);
+    margin: 30px;
+    border-radius: 20px;
+    text-align: center;
+
+    & {
+      @media screen and (max-width: 768px) {
+        .movies li img {
+          @include size(140px, 220px);
+          margin: 10px;
+          border-radius: 20px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

@@ -70,10 +70,6 @@
 }
 
 .details .cast-movies {
-  /* width: 50%;
-  height: 200px;
-  margin: 50px auto; */
-
   display: flex;
   flex-direction: column;
   justify-content: center;
