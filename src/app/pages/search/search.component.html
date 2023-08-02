@@ -6,9 +6,9 @@
   </div>
 
   <div class="search-movies" *ngIf="searchMovies !== undefined">
-    <div>
-      <div *ngFor="let movie of searchMovies" class="search-movies__main">
-        <div class="w-100 d-flex justify-content-end">
+    <div *ngIf="searchMovies.length !== 0; else notFound">
+      <div *ngFor="let movie of searchMovies">
+        <div>
           <a href="/details/{{ movie.id }}">
             <img
               src="https://image.tmdb.org/t/p/original{{ movie.poster_path }}"
@@ -16,24 +16,27 @@
           </a>
         </div>
 
-        <div class="w-100">
+        <div>
           <h5>{{ movie.title }}</h5>
+          <p>{{ movie?.overview }}</p>
           <div class="m-2 mt-5">
             <i class="fas fa-star"></i>
             <span class="ms-2">{{ movie.vote_average }}</span>
           </div>
           <div class="m-2">
             <i class="fa-solid fa-calendar-days"></i>
-            <span class="ms-2">{{ movie.release_date.slice(0, 4) }}</span>
+            <span class="ms-2">{{ movie.release_date }}</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="movieNotFound" *ngIf="searchMovies.length == 0">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <h4>We are sorry, we can not find the movie :(</h4>
-      <p>Find your movie by Type title, categories, years, etc</p>
-    </div>
+    <ng-template #notFound>
+      <div class="movieNotFound">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <h4>We are sorry, we can not find the movie :(</h4>
+        <p>Find your movie by Type title, categories, years, etc</p>
+      </div>
+    </ng-template>
   </div>
 </div>

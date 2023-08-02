@@ -6,20 +6,23 @@ import { Search } from 'src/app/models/search';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'],
+  styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
-  searchMovies!: Search[];
-  query: string = '';
+  searchMovies: Search[] | undefined = undefined;
   constructor(private myDataService: SearchService) {}
 
-  searchFilter(e: any) {
-    this.query = e.target.value;
+  getSearchMovies(query: string): void {
     this.myDataService
-      .getSearch(this.query)
+      .getSearch(query)
       .pipe(take(1))
       .subscribe((data: any) => {
         this.searchMovies = data.results;
       });
+    console.log(this.searchMovies);
+  }
+
+  searchFilter(e: any) {
+    this.getSearchMovies(e.target.value);
   }
 }

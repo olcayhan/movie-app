@@ -1,0 +1,62 @@
+@import "../../vars.scss";
+
+.watchlist_main {
+  @include display(flex, column, center, center);
+  padding-bottom: 100px;
+
+  .notFound {
+    @include display(flex, column, center, center);
+    @include size(100%, 100vh);
+
+    & > h3 {
+      @include font(24px, 600);
+      color: #ebebef;
+      @media screen and (max-width: 768px) {
+        @include font(16px, 600);
+      }
+    }
+
+    & > p {
+      @include font(18px, 500);
+      color: #92929d;
+
+      @media screen and (max-width: 768px) {
+        @include font(12px, 500);
+      }
+    }
+  }
+
+  .search {
+    @include display(flex, column, center, center);
+    gap: 30px;
+    list-style: none;
+    padding: 40px;
+    color: #92929d;
+    max-width: 800px;
+
+    & > div {
+      @include display(flex, row, center, center);
+      gap: 50px;
+      box-shadow: 0 1rem 3rem rgba(#000, 0.175);
+      padding: 40px;
+
+      @media screen and (max-width: 768px) {
+        @include display(flex, column, center, center);
+      }
+
+      img {
+        @include size(220px, 280px);
+        border-radius: 20px;
+      }
+
+      & > div:last-child {
+        width: 100%;
+
+        & > p {
+          @include font(14px, 500);
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
