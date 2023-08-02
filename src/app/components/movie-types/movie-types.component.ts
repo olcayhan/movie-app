@@ -1,5 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
-import { MovieTypesService } from './movie-types.service';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Details } from 'src/app/models/details';
 
 @Component({
@@ -7,15 +6,7 @@ import { Details } from 'src/app/models/details';
   templateUrl: './movie-types.component.html',
   styleUrls: ['./movie-types.component.scss'],
 })
-export class MovieTypesComponent implements OnChanges {
-  movieType!: Details[];
-  @Input() selectedType: any;
-
-  constructor(private myDataService: MovieTypesService) {}
-
-  ngOnChanges(): void {
-    this.myDataService
-      .getMovieTypes(this.selectedType)
-      .subscribe((data: any) => (this.movieType = data.results));
-  }
+export class MovieTypesComponent {
+  @Input() movieType: Details[] = [];
+  constructor() {}
 }

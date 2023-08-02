@@ -1,0 +1,31 @@
+@import "../../vars.scss";
+
+.home {
+  & > p {
+    @include font(24px, 800);
+    color: #fff;
+    margin: 20px;
+  }
+
+  & > div {
+    @include display(flex, row, center, center);
+    color: #fff;
+    list-style: none;
+    gap: 10px;
+    padding: 20px 0;
+    & > div {
+      position: relative;
+      & > button {
+        background-color: transparent;
+        color: #fff;
+        border: none;
+      }
+      & > div {
+        @include size(100%, 4px);
+        position: absolute;
+        background-color: #3a3f47;
+        margin-top: 10px;
+      }
+    }
+  }
+}
