@@ -1,0 +1,22 @@
+@import "../../vars.scss";
+
+nav {
+  @include display(flex, row, space-between, center);
+  @include size(100%, 100px);
+  position: fixed;
+  bottom: 0;
+  padding: 0 80px;
+  background-color: #242a32;
+  border-top: 1px solid #0296e5;
+  & > a {
+    @include display(flex, column, center, center);
+    text-decoration: none;
+    gap: 10px;
+
+    & > p {
+      @include font(12px, 500);
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+}
