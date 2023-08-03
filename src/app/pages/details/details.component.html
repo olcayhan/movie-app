@@ -54,7 +54,7 @@
     </p>
   </div>
 
-  <div class="review-movies" *ngIf="selectNav == 'review'">
+  <!-- <div class="review-movies" *ngIf="selectNav == 'review'">
     <ul>
       <li *ngFor="let review of reviews">
         <div class="avatar">
@@ -73,7 +73,8 @@
         </div>
       </li>
     </ul>
-  </div>
+  </div> -->
+  <app-review-movies [selectNav]="selectNav" [reviews]="reviews"></app-review-movies>
 
   <app-cast-movies
     [selectNav]="selectNav"

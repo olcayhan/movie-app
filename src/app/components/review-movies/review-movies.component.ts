@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { Credits } from 'src/app/models/credits';
+import { Review } from 'src/app/models/review';
 
 @Component({
-  selector: 'app-cast-movies',
-  templateUrl: './cast-movies.component.html',
-  styleUrls: ['./cast-movies.component.scss'],
+  selector: 'app-review-movies',
+  templateUrl: './review-movies.component.html',
+  styleUrls: ['./review-movies.component.scss'],
 })
-export class CastMoviesComponent {
-  @Input() selectNav: string = '';
-  @Input() credits: Credits[] = [];
+export class ReviewMoviesComponent {
+  @Input() selectNav: string | undefined;
+  @Input() reviews: Review[] = [];
 }

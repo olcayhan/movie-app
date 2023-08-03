@@ -1,14 +1,20 @@
-<div class="cast-movies" *ngIf="selectNav == 'cast'">
-  <div>
-    <div *ngFor="let cast of credits">
-      <img
-        [src]="
-          cast.profile_path
-            ? 'https://image.tmdb.org/t/p/original' + cast.profile_path
-            : '../../../assets/images/avatar.svg'
-        "
-      />
-      <h5 class="text-center">{{ cast.original_name }}</h5>
-    </div>
-  </div>
+<div class="review-movies" *ngIf="selectNav == 'review'">
+  <ul>
+    <li *ngFor="let review of reviews">
+      <div>
+        <div>
+          <img src="../../../assets/images/avatar.svg" />
+          <p class="">
+            {{ review.author_details.rating }}
+          </p>
+        </div>
+        <div>
+          <h5>{{ review.author }}</h5>
+          <p>
+            {{ review.content }}
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
 </div>

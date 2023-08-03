@@ -1,20 +1,41 @@
 @import "../../vars.scss";
 
-.cast-movies {
-  @include display(flex, column, center, center);
-  list-style: none;
-  gap: 30px;
-
-  & > div {
-    @include display(flex, row, center, center);
-    flex-wrap: wrap;
+.review-movies {
+  & > ul {
+    @include size(100%, auto);
     list-style: none;
-    gap: 30px;
+    & > li {
+      margin: 40px;
+      padding: 40px;
+      box-shadow: $box-shadow;
+      & > div {
+        @include display(flex, row, center, flex-start);
 
-    img {
-      @include size(150px, 150px);
-      margin: 30px;
-      border-radius: 50%;
+        & > div:first-child {
+          & > img {
+            @include size(80px, 80px);
+            border-radius: 50%;
+            margin: 0 30px;
+          }
+          & > p {
+            color: lightblue;
+            margin-top: 15px;
+            text-align: center;
+          }
+        }
+
+        & > div:last-child {
+          & > p {
+            @include font(14px, 500);
+            opacity: 0.7;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          @include display(flex, column, center, center);
+          gap: 20px;
+        }
+      }
     }
   }
 }
