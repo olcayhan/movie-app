@@ -37,7 +37,7 @@
     & > div {
       @include display(flex, row, center, center);
       gap: 50px;
-      box-shadow: 0 1rem 3rem rgba(#000, 0.175);
+      box-shadow: $box-shadow;
       padding: 40px;
 
       @media screen and (max-width: 768px) {

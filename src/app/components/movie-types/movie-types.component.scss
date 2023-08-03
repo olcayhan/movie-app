@@ -11,15 +11,11 @@
     border-radius: 20px;
     text-align: center;
 
-    & {
-      @media screen and (max-width: 768px) {
-        .movies li img {
-          @include size(140px, 220px);
-          margin: 10px;
-          border-radius: 20px;
-          text-align: center;
-        }
-      }
+    @media screen and (max-width: 768px) {
+      @include size(140px, 220px);
+      margin: 10px;
+      border-radius: 20px;
+      text-align: center;
     }
   }
 }

@@ -12,7 +12,7 @@
       @include display(flex, row, center, center);
       gap: 40px;
       padding: 20px;
-      box-shadow: 0 1rem 3rem rgba(#000, 0.175);
+      box-shadow: $box-shadow;
 
       @media screen and (max-width: 768px) {
         @include display(flex, column, center, center);

@@ -2,9 +2,7 @@
   class="container details"
   *ngIf="details !== undefined; else loadingTemplate"
 >
-  <div
-    class="d-flex flex-row justify-content-between align-items-center w-100 p-3"
-  >
+  <div class="details__top">
     <a class="border-0 bg-transparent" href="/">
       <img src="../../../assets/icons/arrow-left.svg" alt="arrow-left" />
     </a>
@@ -13,21 +11,20 @@
       <img src="../../../assets/icons/save-head.svg" alt="save-head" />
     </button>
   </div>
+
   <div class="details__head">
     <img
       *ngIf="details.backdrop_path !== undefined"
-      class="background-img"
       src="https://image.tmdb.org/t/p/original{{ details.backdrop_path }}"
     />
 
     <img
       *ngIf="details.poster_path !== null"
-      class="poster"
       src="https://image.tmdb.org/t/p/original{{ details.poster_path }}"
     />
   </div>
-  <h3 class="text-center m-2">{{ details.title }}</h3>
-  <p class="text-center m-4">
+  <h3>{{ details.title }}</h3>
+  <p>
     {{ details.release_date?.slice(0, 4) }} | {{ details.runtime }} minutes |
     {{ details.genres[0].name }}
   </p>
@@ -35,16 +32,15 @@
   <ul class="top-buttons">
     <li>
       <button (click)="selectedNav('about')">About Movie</button>
-
-      <div *ngIf="selectNav == 'about'" class="little-icon mt-2"></div>
+      <div *ngIf="selectNav == 'about'"></div>
     </li>
     <li>
       <button (click)="selectedNav('review')">Reviews</button>
-      <div *ngIf="selectNav == 'review'" class="little-icon mt-2"></div>
+      <div *ngIf="selectNav == 'review'"></div>
     </li>
     <li>
       <button (click)="selectedNav('cast')">Cast</button>
-      <div *ngIf="selectNav == 'cast'" class="little-icon mt-2"></div>
+      <div *ngIf="selectNav == 'cast'"></div>
     </li>
   </ul>
 
@@ -54,27 +50,10 @@
     </p>
   </div>
 
-  <!-- <div class="review-movies" *ngIf="selectNav == 'review'">
-    <ul>
-      <li *ngFor="let review of reviews">
-        <div class="avatar">
-          <div class="left-avatar">
-            <img class="user-image" src="../../../assets/images/avatar.svg" />
-            <p class="user-poing text-center mt-3 text-primary">
-              {{ review.author_details.rating }}
-            </p>
-          </div>
-          <div class="about">
-            <h5>{{ review.author }}</h5>
-            <p>
-              {{ review.content }}
-            </p>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div> -->
-  <app-review-movies [selectNav]="selectNav" [reviews]="reviews"></app-review-movies>
+  <app-review-movies
+    [selectNav]="selectNav"
+    [reviews]="reviews"
+  ></app-review-movies>
 
   <app-cast-movies
     [selectNav]="selectNav"
