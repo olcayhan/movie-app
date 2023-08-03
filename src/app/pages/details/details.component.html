@@ -75,21 +75,10 @@
     </ul>
   </div>
 
-  <div class="cast-movies" *ngIf="selectNav == 'cast'">
-    <div>
-      <div *ngFor="let cast of credits">
-        <img
-          class="image-actor"
-          [src]="
-            cast.profile_path
-              ? 'https://image.tmdb.org/t/p/original' + cast.profile_path
-              : '../../../assets/images/avatar.svg'
-          "
-        />
-        <h5 class="text-center">{{ cast.original_name }}</h5>
-      </div>
-    </div>
-  </div>
+  <app-cast-movies
+    [selectNav]="selectNav"
+    [credits]="credits"
+  ></app-cast-movies>
 </div>
 
 <ng-template #loadingTemplate>

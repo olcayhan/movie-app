@@ -12,7 +12,7 @@ import { Details } from 'src/app/models/details';
   styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent implements OnInit {
-  details!: Details;
+  details: Details | undefined;
   reviews: Review[] = [];
   credits: Credits[] = [];
   movieId: string = '';

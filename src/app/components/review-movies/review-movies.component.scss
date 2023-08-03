@@ -1,0 +1,20 @@
+@import "../../vars.scss";
+
+.cast-movies {
+  @include display(flex, column, center, center);
+  list-style: none;
+  gap: 30px;
+
+  & > div {
+    @include display(flex, row, center, center);
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 30px;
+
+    img {
+      @include size(150px, 150px);
+      margin: 30px;
+      border-radius: 50%;
+    }
+  }
+}

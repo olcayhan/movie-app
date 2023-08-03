@@ -12,7 +12,7 @@ import { DetailsComponent } from './pages/details/details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieTypesComponent } from './components/movie-types/movie-types.component';
 import { LoadingBarComponent } from './components/loading-bar/loading-bar.component';
-
+import { CastMoviesComponent } from './components/cast-movies/cast-movies.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +24,7 @@ import { LoadingBarComponent } from './components/loading-bar/loading-bar.compon
     DetailsComponent,
     MovieTypesComponent,
     LoadingBarComponent,
+    CastMoviesComponent,
   ],
   imports: [BrowserModule, RouterOutlet, AppRoutingModule, HttpClientModule],
   providers: [],
