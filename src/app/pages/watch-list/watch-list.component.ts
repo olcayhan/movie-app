@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Details } from 'src/app/models/details';
+import { WatchlistService } from './watch-list.service';
 
 @Component({
   selector: 'app-watch-list',
@@ -8,26 +8,20 @@ import { Details } from 'src/app/models/details';
   styleUrls: ['./watch-list.component.scss'],
 })
 export class WatchListComponent {
-  constructor(private http: HttpClient) {}
+  constructor(private myDataService: WatchlistService) {}
   local: string | null = localStorage.getItem('watchlist');
   watchlist: string[] = this.local ? JSON.parse(this.local) : [];
   movies: Details[] = [];
 
-  getDetails(movieId: string) {
-    this.http
-      .get(
-        'https://api.themoviedb.org/3/movie/' +
-          movieId +
-          '?api_key=2937a1755f75e11815ec137a11f8c4b3'
-      )
-      .subscribe((response: any) => {
-        this.movies.push(response);
-      });
+  ngOnInit(): void {
+    this.watchlist.map((item: string) => {
+      this.getWatchlistMovies(item);
+    });
   }
 
-  ngOnInit() {
-    this.watchlist.map((item) => {
-      this.getDetails(item);
+  getWatchlistMovies(movieID: string): void {
+    this.myDataService.getDetails(movieID).subscribe((data: Details) => {
+      this.movies.push(data);
     });
   }
 }

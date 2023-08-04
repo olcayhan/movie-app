@@ -1,5 +1,5 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { HomeService } from './home.service';
+import { Component, OnInit } from '@angular/core';
+import { HomeService, PageMovies } from './home.service';
 import { Details } from 'src/app/models/details';
 
 interface MovieType {
@@ -26,20 +26,26 @@ export class HomeComponent implements OnInit {
   ];
 
   constructor(private myDataService: HomeService) {}
-  getSelectedMovies(): void {
-    this.myDataService
-      .getMovieTypes(this.selectedType)
-      .subscribe((data: any) => (this.movieType = data.results));
-  }
 
-  getPopularMovies(): void {
-    this.myDataService.getPopular().subscribe((data: any) => {
-      this.popular = data.results.slice(0, 5);
-    });
-  }
   ngOnInit() {
     this.getPopularMovies();
     this.getSelectedMovies();
+  }
+
+  getSelectedMovies(): void {
+    this.myDataService
+      .getMovieTypes(this.selectedType)
+      .subscribe((data: PageMovies) => {
+        this.movieType = data.results;
+      });
+  }
+
+  getPopularMovies(): void {
+    this.myDataService
+      .getPopular()
+      .subscribe(
+        (data: PageMovies) => (this.popular = data.results.slice(0, 5))
+      );
   }
 
   setSelected(val: string): void {

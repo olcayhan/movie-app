@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { env } from 'src/app/environments/environment';
 import { Observable } from 'rxjs';
 import { Search } from 'src/app/models/search';
+import { Details } from 'src/app/models/details';
 
 export interface SearchPage {
   results: Search[];
@@ -11,12 +12,10 @@ export interface SearchPage {
 @Injectable({
   providedIn: 'root',
 })
-export class SearchService {
+export class WatchlistService {
   constructor(private http: HttpClient) {}
 
-  getSearch(query: string): Observable<SearchPage> {
-    return this.http.get<SearchPage>(
-      env.searchUrl + env.apiKey + '&query=' + query
-    );
+  getDetails(movieId: string): Observable<Details> {
+    return this.http.get<Details>(env.apiUrl + movieId + env.apiKey);
   }
 }

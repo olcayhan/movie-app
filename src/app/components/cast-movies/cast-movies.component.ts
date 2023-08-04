@@ -7,6 +7,6 @@ import { Credits } from 'src/app/models/credits';
   styleUrls: ['./cast-movies.component.scss'],
 })
 export class CastMoviesComponent {
-  @Input() selectNav: string = '';
+  @Input() selectNav: string | undefined;
   @Input() credits: Credits[] = [];
 }

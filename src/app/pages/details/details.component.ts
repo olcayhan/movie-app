@@ -1,5 +1,5 @@
 import { take } from 'rxjs';
-import { DetailsService } from './details.service';
+import { CreditsPage, DetailsService, ReviewPage } from './details.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Review } from 'src/app/models/review';
@@ -12,20 +12,20 @@ import { Details } from 'src/app/models/details';
   styleUrls: ['./details.component.scss'],
 })
 export class DetailsComponent implements OnInit {
-  details: Details | undefined;
+  details?: Details;
   reviews: Review[] = [];
   credits: Credits[] = [];
   movieId: string = '';
-
-  constructor(
-    private route: ActivatedRoute,
-    private myDataService: DetailsService
-  ) {}
 
   local: string | null = localStorage.getItem('watchlist');
   watchlist: string[] = this.local ? JSON.parse(this.local) : [];
 
   selectNav = 'about';
+
+  constructor(
+    private route: ActivatedRoute,
+    private myDataService: DetailsService
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -35,24 +35,34 @@ export class DetailsComponent implements OnInit {
   }
 
   fetchData(): void {
+    this.fetchMovieDetails();
+    this.fetchReviews();
+    this.fetchCredits();
+  }
+
+  private fetchMovieDetails(): void {
     this.myDataService
       .getDetails(this.movieId)
       .pipe(take(1))
-      .subscribe((data: any) => {
+      .subscribe((data: Details) => {
         this.details = data;
       });
+  }
 
+  private fetchReviews(): void {
     this.myDataService
       .getReviews(this.movieId)
       .pipe(take(1))
-      .subscribe((data: any) => {
+      .subscribe((data: ReviewPage) => {
         this.reviews = data.results;
       });
+  }
 
+  private fetchCredits(): void {
     this.myDataService
       .getCredits(this.movieId)
       .pipe(take(1))
-      .subscribe((data: any) => {
+      .subscribe((data: CreditsPage) => {
         this.credits = data.cast;
       });
   }
