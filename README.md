@@ -1,27 +1,51 @@
-# Untitled
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+# Movie App
 
-## Development server
+<img src='https://github.com/olcayhan/movie-app/assets/71206063/ff7b8326-dee8-44d2-a45b-8c08c64492b2' width='500px'/>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Website Link: https://movieapp-demo.vercel.app/
 
-## Code scaffolding
+Movie App is a web application that allows users to discover new movies, get information about films, and mark movies they want to watch.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- Users can view new movies.
+- They can access detailed information about each movie.
+- Users can filter movies by categories.
+- They can mark movies as favorites.
+- View their favorite movies.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+You can set up Movie App on your local environment by following these steps:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone this repository:
 
-## Running end-to-end tests
+```bash
+git clone https://github.com/olcayhan/movie-app.git
+cd movie-app
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Install the required dependencies:
 
-## Further help
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Start the application:
+
+```bash
+npm start
+```
+
+The application should now be running at http://localhost:3000. You can open this address in your browser to access the application.
+
+## Contributing
+
+If you would like to contribute to Movie App, please follow these steps:
+
+1. Fork this repository.
+2. Create a new branch: `git checkout -b feature/your-feature-name`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push the changes to your forked repository: `git push origin feature/your-feature-name`
+5. Create a Pull Request, and wait for us to review your changes.
